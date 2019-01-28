@@ -9,10 +9,10 @@
 import UIKit
 import SpriteKit
 import AVFoundation
-import GoogleMobileAds
+//import GoogleMobileAds
 
 var audioPlayer = AVAudioPlayer()
-var rewardBasedAd: GADRewardBasedVideoAd!
+//var rewardBasedAd: GADRewardBasedVideoAd!
 
 let defaults = UserDefaults()
 var timesClicked = 15
@@ -26,7 +26,7 @@ var buttonTwoPointsText = ["Ask someone what is your favourite drink. TRUE - You
 
 var buttonThreePointsText = ["You have to be quiet for 1 whole round, or else you have to DRINK UP your whole drink.", "Perform the next task of the next 2 players.", "Drink your whole drink and play again.", "Drink double.", "Everyone drink their whole drinks.", "Choose someone and both of you drink your drinks with your arms crossed.", "You and the player to your right stand up on 1 foot and try to touch the ground with the opposite hand. The player who touches the ground last, takes 4 sips.", "Hold your breath for 15 seconds and then drink your whole drink.", "Choose the largest drink on the table and drink it up."]
 
-class PlayViewController: UIViewController, GADRewardBasedVideoAdDelegate {
+class PlayViewController: UIViewController {
     // Score Labels
     @IBOutlet var playerOneSL: UILabel!
     @IBOutlet var playerTwoSL: UILabel!
@@ -96,9 +96,9 @@ class PlayViewController: UIViewController, GADRewardBasedVideoAdDelegate {
             currentTimesClicked = timesClicked
             
             // Show ad
-            if rewardBasedAd.isReady {
+            /*if rewardBasedAd.isReady {
                 rewardBasedAd.present(fromRootViewController: self)
-            }
+            }*/
         }
     }
     
@@ -508,7 +508,7 @@ class PlayViewController: UIViewController, GADRewardBasedVideoAdDelegate {
         audioPlayer.play()
     }
     
-    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+    /*func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
         playerOneSLValue -= 1
         playerOneSL.text = String(playerOneSLValue)
         
@@ -552,7 +552,7 @@ class PlayViewController: UIViewController, GADRewardBasedVideoAdDelegate {
     
     func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
         
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -560,9 +560,9 @@ class PlayViewController: UIViewController, GADRewardBasedVideoAdDelegate {
         
         print(reverse(text: "stressed"))
                         
-        rewardBasedAd = GADRewardBasedVideoAd.sharedInstance()
+        /*rewardBasedAd = GADRewardBasedVideoAd.sharedInstance()
         rewardBasedAd.delegate = self
-        rewardBasedAd.load(GADRequest(), withAdUnitID: "ca-app-pub-7711507841405386/5580695284")
+        rewardBasedAd.load(GADRequest(), withAdUnitID: "ca-app-pub-7711507841405386/5580695284")*/
         
         // test: ca-app-pub-3940256099942544/1712485313
         
